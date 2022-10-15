@@ -1,5 +1,6 @@
 import { Category, CategoryProperties } from "./category";
 import { omit } from "lodash";
+import UniqueEntityId from "../../../@seedwork/domain/unique-entity-id.vo";
 
 let props: CategoryProperties = {
   name: "movie",
@@ -32,12 +33,12 @@ describe("Category Tests", () => {
     expect(category.props).toStrictEqual(newProps);
   });
 
-  it("Getter of name field", () => {
+  it("Getter of name field prop", () => {
     const category = new Category({ name: "movie" });
     expect(category.name).toBe("movie");
   });
 
-  it("Getter of description field", () => {
+  it("Getter and setter of description field prop", () => {
     let category = new Category({
       name: "movie",
       description: "some description",
@@ -61,5 +62,30 @@ describe("Category Tests", () => {
     expect(category.is_active).toBeTruthy();
     category = new Category({ name: "movie", is_active: false });
     expect(category.is_active).toBeFalsy();
+    category["is_active"] = true;
+    expect(category.is_active).toBeTruthy();
+    category["is_active"] = false;
+    expect(category.is_active).toBeFalsy();
+  });
+
+  it("Getter of created_at field prop", () => {
+    let created_at = new Date();
+    let category = new Category({ name: "movie", created_at });
+    expect(category.created_at).toBe(created_at);
+  });
+
+  it("Id field", () => {
+    const data = [
+      { props: { name: "Movie" } },
+      { props: { name: "Movie" }, id: null },
+      { props: { name: "Movie" }, id: undefined },
+      { props: { name: "Movie" }, id: new UniqueEntityId() },
+    ];
+
+    data.forEach((item) => {
+      let category = new Category(item.props, item.id);
+      expect(category.id).not.toBeNull();
+      expect(category.id).toBeInstanceOf(UniqueEntityId);
+    });
   });
 });
