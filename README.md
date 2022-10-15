@@ -16,6 +16,7 @@
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/RafaelCava/admin-catalogo-video?color=56BEB8">
 
   <img alt="Licença" src="https://img.shields.io/github/license/RafaelCava/admin-catalogo-video?color=56BEB8">
+  
 </p>
 
 Status
