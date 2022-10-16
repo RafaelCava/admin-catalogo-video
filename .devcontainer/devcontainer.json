@@ -44,7 +44,8 @@
 				"RobbOwen.synthwave-vscode",
 				"funkyremi.vscode-google-translate",
 				"redhat.vscode-yaml",
-				"vivaxy.vscode-conventional-commits"
+				"vivaxy.vscode-conventional-commits",
+				"SonarSource.sonarlint-vscode"
 			]
 		}
 	}
