@@ -22,6 +22,8 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
   -p https://github.com/zsh-users/zsh-completions \
   -a 'export TERM=xterm-256-color'
 
+RUN echo "exec zsh" >> ~/.bashrc
+
 # RUN [[ ! -f ~/.p10k.zsh  ]]  || source ~/.p10k.zsh
 
 CMD [ "sh", "-c", "yarn install && tail -f /dev/null" ]
