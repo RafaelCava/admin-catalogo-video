@@ -1,5 +1,6 @@
 version: '3'
-
+networks:
+  micro-videos-app:
 services:
   app:
     build:
@@ -8,3 +9,5 @@ services:
     container_name: micro-videos-app
     volumes:
       - .:/home/node/app
+    networks:
+      - micro-videos-app
