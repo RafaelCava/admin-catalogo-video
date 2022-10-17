@@ -7,7 +7,8 @@ RUN apt update && apt install -y --no-install-recommends \
   zsh \
   curl \
   wget \
-  nano
+  nano \
+  fonts-powerline
 
 USER node
 
@@ -21,6 +22,6 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
   -p https://github.com/zsh-users/zsh-autosuggestions \
   -p https://github.com/zsh-users/zsh-completions
 
-RUN echo "exec zsh" >> ~/.bashrc
+RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
 
 CMD [ "sh", "-c", "yarn install && tail -f /dev/null" ]

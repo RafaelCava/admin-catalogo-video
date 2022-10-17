@@ -8,6 +8,7 @@
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml",
+		"../docker-compose.override.yml",
 		"docker-compose.yml"
 	],
 
@@ -48,7 +49,11 @@
 				"SonarSource.sonarlint-vscode"
 			]
 		}
-	}
+	},
+
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh"
+  }
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
