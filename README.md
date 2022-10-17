@@ -64,10 +64,10 @@ Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.co
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/RafaelCava/app
+$ git clone https://github.com/RafaelCava/admin-catalogo-video.git
 
 # Entre na pasta
-$ cd app
+$ cd admin-catalogo-video
 
 # Instale as dependências
 $ yarn
